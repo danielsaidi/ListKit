@@ -13,7 +13,7 @@
 
 # ListKit
 
-ListKit is a SwiftUI library that provides additional list, grid, and shelf utilities, to simplify listing things in various ways.
+ListKit is a SwiftUI library that provides additional list, grid, and shelf utilities to simplify listing items in flexible ways.
 
 
 
@@ -28,9 +28,7 @@ https://github.com/danielsaidi/ListKit.git
 
 ## Getting started
 
-ListKit has a bunch of predefined components, as well as native view extensions.
-
-Below are a few of the many views in the library. Please have a look at the online [documentation][Documentation] for more information. 
+ListKit has a bunch of predefined view components, and native view extensions. Below are the most useful views. Please have a look at the online [documentation][Documentation], the source code previews, and the demo app for more examples. 
 
 
 ### List Button Group
@@ -51,6 +49,7 @@ struct ContentView: View {
                 Button(action: doSomething) { ... }
             }
         }
+        .listBackgroundGradient(colors: [.mint, .blue])
     }
 }
 ``` 
@@ -58,72 +57,49 @@ struct ContentView: View {
 The default glass style works best with a prominent background. You can use the `.listBackgroundGradient(...)` extension to make this happen.
 
 
-### List Drag Handle
+### Shelf
 
-The `ListDragHandle` lets you simulate the native drag handle on iOS devices, when the list is not in edit mode:
+The `Shelf` view can be used to build vertical list of horizontally scrolling shelves, as seen in many streaming apps:
 
-![Preview](/Resources/list-drag-handle-cropped.jpg) 
-
-```swift
-struct ContentView: View {
-
-    var body: some View {
-        List {
-            ForEach(1...10, id: \.self) { item in
-                HStack {
-                    Text("Item")
-                    ListDragHandle()
-                }
-            }
-            .onMove { _, _ in }
-        }
-    }
-}
-```
-
-The handle will only render when the list is not in edit mode, to avoid conflicts with the native handle. 
-
-
-### List Select Item
-
-The `ListSelectItem` lets you add a customizable selection indicator to any selectable list view:
-
-![Preview](/Resources/list-select-item-cropped.jpg) 
+![Preview](/Resources/shelf-cropped.jpg) 
 
 ```swift
-struct ContentView: View {
-
-    var body: some View {
-        List {
-            ForEach(0...10, id: \.self) { index in
-                ListSelectItem(
-                    isSelected: index == selection
-                ) {
-                    Text("Item \(index)")
-                }
-                // ...or:
-                ListSelectItem(
-                    isSelected: index == selection
-                ) {
-                    Text("Item \(index)")
-                } selectionIndicator: {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.green)
-                }
-            }
-        }
+Shelf(items: [1, 2, 3, 4, 5]) {
+    Text("Shelf Title")
+        .padding(5)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.yellow)
+        .clipShape(.rect(cornerRadius: 10))
+} content: { item in
+    Button {
+        print("Tapped")
+    } label: {
+        Color.red
+            .frame(height: 150)
+            .aspectRatio(15/9, contentMode: .fit)
+            .clipShape(.rect(cornerRadius: 10))
     }
+    #if os(tvOS)
+    .buttonStyle(.card)
+    #endif
 }
+.shelfEdgePadding(25)
+.shelfItemSpacing(25)
+.shelfScrollBehavior(.enabled)
 ```
 
-The handle will only render when the list is not in edit mode, to avoid conflicts with the native handle. 
+A shelf has a custom title and content view, and lets you customize edge padding, item spacing and scroll behavior.
+
 
 ### More Views
 
 ListKit has more views, not listed here to avoid bloating the overview:
 
+* `ListDragHandle`
 * `ListSectionTitle`
+* `ListSelectItem`
 * `PlainListContent`
+
 
 ### View Extensions
 
