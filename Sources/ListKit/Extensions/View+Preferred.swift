@@ -20,7 +20,7 @@ public extension View {
     }
 
     /// Applies a custom section spacing on supported platforms.
-    func preferredSectionSpacing(
+    func preferredListSectionSpacing(
         _ spacing: Double
     ) -> some View {
         #if os(macOS) || os(tvOS)
@@ -40,5 +40,5 @@ public extension View {
             Text("Text 2")
         }
     }
-    .preferredSectionSpacing(10)
+    .preferredListSectionSpacing(10)
 }

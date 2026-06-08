@@ -10,7 +10,7 @@ import SwiftUI
 
 /// This view can be used to add a plain content view to any
 /// part of a `List`.
-private struct PlainListContent<Content: View>: View {
+public struct PlainListContent<Content: View>: View {
 
     public init(
         @ViewBuilder content: @escaping () -> Content
@@ -34,7 +34,7 @@ private struct PlainListContent<Content: View>: View {
 ///
 /// The view adds negative padding to account for spacing on
 /// certain platforms.
-public struct ListFooter<Content: View>: View {
+public struct PlainListFooter<Content: View>: View {
 
     public init(
         @ViewBuilder content: @escaping () -> Content
@@ -60,7 +60,7 @@ public struct ListFooter<Content: View>: View {
 ///
 /// The view adds negative padding to account for spacing on
 /// certain platforms.
-public struct ListHeader<Content: View>: View {
+public struct PlainListHeader<Content: View>: View {
 
     /// Create a list header.
     ///

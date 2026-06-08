@@ -125,7 +125,7 @@ private struct PaddedIconLabelStyle: LabelStyle {
             )
         }
         .tint(.white)
-        .preferredSectionSpacing(10)
+        .preferredListSectionSpacing(10)
         .listBackgroundGradient(colors: [.mint, .blue])
         .listButtonGroupSpacing(0)
     }
