@@ -32,7 +32,9 @@ ListKit has a bunch of predefined components, as well as native view extensions.
 
 ### ListButtonGroup
 
-The `ListButtonGroup` component lets you add quick actions in a single line: 
+The `ListButtonGroup` lets you add quick list actions, like you can see in apps like the native Contacts app:
+
+![Preview](/Resources/list-button-group-cropped.jpg)
 
 ```swift
 struct ContentView: View {
@@ -48,7 +50,36 @@ struct ContentView: View {
         }
     }
 }
+``` 
+
+The default glass style works best with a prominent background. You can use the `.listBackgroundGradient(...)` extension to make this happen.
+
+
+### ListDragHandle
+
+The `ListDragHandle` lets you simulate the native drag handle on iOS devices, when the list is not in edit mode:
+
+![Preview](/Resources/list-drag-handle-cropped.jpg) 
+
+```swift
+struct ContentView: View {
+
+    var body: some View {
+        List {
+            ForEach(1...10, id: \.self) { item in
+                HStack {
+                    Text("Item")
+                    ListDragHandle()
+                }
+            }
+            .onMove { _, _ in }
+        }
+    }
+}
 ```
+
+The handle will only render when the list is not in edit mode, to avoid conflicts with the native handle. 
+
 
 ### View Extensions
 

@@ -75,9 +75,9 @@ private struct PaddedIconLabelStyle: LabelStyle {
                 Color.white.opacity(0.2)
             )
         }
+        .tint(.white)
         .preferredSectionSpacing(10)
         .listBackgroundGradient(colors: [.mint, .blue])
-        .tint(.white)
     }
 }
 
