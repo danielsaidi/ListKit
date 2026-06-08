@@ -33,7 +33,7 @@ ListKit has a bunch of predefined components, as well as native view extensions.
 Below are a few of the many views in the library. Please have a look at the online [documentation][Documentation] for more information. 
 
 
-### ListButtonGroup
+### List Button Group
 
 The `ListButtonGroup` lets you add quick list actions, like you can see in apps like the native Contacts app:
 
@@ -58,7 +58,7 @@ struct ContentView: View {
 The default glass style works best with a prominent background. You can use the `.listBackgroundGradient(...)` extension to make this happen.
 
 
-### ListDragHandle
+### List Drag Handle
 
 The `ListDragHandle` lets you simulate the native drag handle on iOS devices, when the list is not in edit mode:
 
@@ -84,7 +84,7 @@ struct ContentView: View {
 The handle will only render when the list is not in edit mode, to avoid conflicts with the native handle. 
 
 
-### ListSelectItem
+### List Select Item
 
 The `ListSelectItem` lets you add a customizable selection indicator to any selectable list view:
 

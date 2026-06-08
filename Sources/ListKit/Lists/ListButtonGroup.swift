@@ -1,5 +1,5 @@
 //
-//  ListActionButtonGroup.swift
+//  ListButtonGroup.swift
 //  Vinylsamlaren
 //
 //  Created by Daniel Saidi on 2026-05-26.
@@ -15,8 +15,12 @@ import SwiftUI
 ///
 /// To use this view, just provide it with a list of buttons.
 /// Four buttons is ideal on iOS.
+///
+/// Available view modifiers:
+/// 
+/// - ``SwiftUICore/View/listButtonGroupSpacing(_:)``
 @available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
-public struct ListActionButtonGroup<Content: View>: View {
+public struct ListButtonGroup<Content: View>: View {
 
     public init(
         @ViewBuilder content: @escaping () -> Content
@@ -26,9 +30,11 @@ public struct ListActionButtonGroup<Content: View>: View {
 
     private let content: () -> Content
 
+    @Environment(\.listButtonGroupSpacing) private var spacing
+
     public var body: some View {
         PreferredGlassEffectContainer {
-            HStack(spacing: 0) {
+            HStack(spacing: spacing) {
                 Group {
                     content()
                 }
@@ -44,6 +50,20 @@ public struct ListActionButtonGroup<Content: View>: View {
         .labelStyle(PaddedIconLabelStyle())
         .listRowBackground(Color.clear)
         .listRowInsets(.init())
+    }
+}
+
+public extension EnvironmentValues {
+
+    /// The spacing between buttons in a ``ListButtonGroup``.
+    @Entry var listButtonGroupSpacing: CGFloat = 0
+}
+
+public extension View {
+
+    /// Sets the spacing between buttons in a ``ListButtonGroup``.
+    func listButtonGroupSpacing(_ spacing: CGFloat) -> some View {
+        environment(\.listButtonGroupSpacing, spacing)
     }
 }
 
@@ -87,7 +107,7 @@ private struct PaddedIconLabelStyle: LabelStyle {
     if #available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *) {
         List {
             Section {
-                ListActionButtonGroup {
+                ListButtonGroup {
                     previewButton()
                     previewButton()
                     previewButton()
@@ -107,6 +127,7 @@ private struct PaddedIconLabelStyle: LabelStyle {
         .tint(.white)
         .preferredSectionSpacing(10)
         .listBackgroundGradient(colors: [.mint, .blue])
+        .listButtonGroupSpacing(0)
     }
 }
 
