@@ -30,7 +30,7 @@ https://github.com/danielsaidi/ListKit.git
 
 ListKit has a bunch of predefined components, as well as native view extensions.
 
-Below are a few of the many views in the library. Please have a look at the 
+Below are a few of the many views in the library. Please have a look at the online [documentation][Documentation] for more information. 
 
 
 ### ListButtonGroup
@@ -123,6 +123,7 @@ The handle will only render when the list is not in edit mode, to avoid conflict
 ListKit has more views, not listed here to avoid bloating the overview:
 
 * `ListSectionTitle`
+* `PlainListContent`
 
 ### View Extensions
 
