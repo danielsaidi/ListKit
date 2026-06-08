@@ -6,11 +6,11 @@ let package = Package(
     name: "ListKit",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v15),
-        .tvOS(.v15),
-        .watchOS(.v8),
-        .macOS(.v12),
-        .visionOS(.v1)
+        .iOS(.v17),
+        .tvOS(.v17),
+        .watchOS(.v10),
+        .macOS(.v14),
+        .visionOS(.v2)
     ],
     products: [
         .library(

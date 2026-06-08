@@ -66,26 +66,18 @@ private struct PaddedIconLabelStyle: LabelStyle {
                 }
             }
 
-
             Section {
                 Text("Foo")
                 Text("Foo")
                 Text("Foo")
             }
             .listRowBackground(
-                Color.clear.background(.ultraThinMaterial)
+                Color.white.opacity(0.2)
             )
         }
         .tint(.white)
         .withPreferredSectionSpacing()
-        .scrollContentBackground(.hidden)
-        .background(
-            LinearGradient(
-                colors: [.mint, .blue],
-                startPoint: .top,
-                endPoint: .bottom
-            )
-        )
+        .listBackgroundGradient(colors: [.mint, .blue])
     }
 }
 
