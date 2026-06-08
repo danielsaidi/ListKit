@@ -56,6 +56,7 @@ ListKit also provides many view extensions to simplify common tasks:
 
 * `.listBackgroundGradient(.blue)`
 * `.listBackgroundGradient(colors: [.mint, .blue])`
+* `.preferredListSectionSpacing(10)`
 
 See the online [documentation][Documentation] for more information.
 

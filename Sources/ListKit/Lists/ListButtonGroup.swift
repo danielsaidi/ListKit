@@ -75,21 +75,9 @@ private struct PaddedIconLabelStyle: LabelStyle {
                 Color.white.opacity(0.2)
             )
         }
-        .tint(.white)
-        .withPreferredSectionSpacing()
+        .preferredSectionSpacing(10)
         .listBackgroundGradient(colors: [.mint, .blue])
-    }
-}
-
-@available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
-private extension View {
-
-    func withPreferredSectionSpacing() -> some View {
-        #if os(macOS)
-        self
-        #else
-        self.listSectionSpacing(10)
-        #endif
+        .tint(.white)
     }
 }
 
