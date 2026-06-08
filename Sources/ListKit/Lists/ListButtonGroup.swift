@@ -27,22 +27,51 @@ public struct ListActionButtonGroup<Content: View>: View {
     private let content: () -> Content
 
     public var body: some View {
-        GlassEffectContainer {
+        PreferredGlassEffectContainer {
             HStack(spacing: 0) {
                 Group {
                     content()
                 }
-                .buttonStyle(.glass(.clear))
                 .buttonBorderShape(.circle)
                 .controlSize(.extraLarge)
                 .font(.title2)
+                .preferredGlassButtonStyle()
             }
             .frame(maxWidth: .infinity, alignment: .center)
             .padding(.vertical, 10)    // Avoid clipping
         }
+        .buttonStyle(.plain)
         .labelStyle(PaddedIconLabelStyle())
         .listRowBackground(Color.clear)
         .listRowInsets(.init())
+    }
+}
+
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+private struct PreferredGlassEffectContainer<Content: View>: View {
+
+    let content: () -> Content
+
+    var body: some View {
+        #if os(visionOS)
+        content()
+        #else
+        GlassEffectContainer {
+            content()
+        }
+        #endif
+    }
+}
+
+@available(iOS 26.0, macOS 26.0, tvOS 26.0, watchOS 26.0, visionOS 26.0, *)
+private extension View {
+
+    func preferredGlassButtonStyle() -> some View {
+        #if os(visionOS)
+        self
+        #else
+        self.buttonStyle(.glass(.clear))
+        #endif
     }
 }
 

@@ -30,6 +30,9 @@ https://github.com/danielsaidi/ListKit.git
 
 ListKit has a bunch of predefined components, as well as native view extensions.
 
+Below are a few of the many views in the library. Please have a look at the 
+
+
 ### ListButtonGroup
 
 The `ListButtonGroup` lets you add quick list actions, like you can see in apps like the native Contacts app:
@@ -115,6 +118,11 @@ struct ContentView: View {
 
 The handle will only render when the list is not in edit mode, to avoid conflicts with the native handle. 
 
+### More Views
+
+ListKit has more views, not listed here to avoid bloating the overview:
+
+* `ListSectionTitle`
 
 ### View Extensions
 
@@ -123,8 +131,10 @@ ListKit also provides many view extensions to simplify common tasks:
 * `.listBackgroundGradient(.blue)`
 * `.listBackgroundGradient(colors: [.mint, .blue])`
 * `.preferredListSectionSpacing(10)`
+. `.preferredScrollContentHidden()`
 
 See the online [documentation][Documentation] for more information.
+
 
 
 ## Documentation
@@ -132,14 +142,17 @@ See the online [documentation][Documentation] for more information.
 The online [documentation][Documentation] has more information, articles, code examples, etc.
 
 
+
 ## Demo Application
 
 The `Demo` folder has a demo app that lets you explore the library.
 
 
+
 ## Support My Work
 
 You can [become a sponsor][Sponsors] to help me dedicate more time on my various [open-source tools][OpenSource]. Every contribution, no matter the size, makes a real difference in keeping these tools free and actively developed.
+
 
 
 ## Contact
@@ -150,6 +163,7 @@ Feel free to reach out if you have questions or want to contribute in any way:
 * E-mail: [daniel.saidi@gmail.com][Email]
 * Bluesky: [@danielsaidi@bsky.social][Bluesky]
 * Mastodon: [@danielsaidi@mastodon.social][Mastodon]
+
 
 
 ## License

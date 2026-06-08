@@ -1,5 +1,5 @@
 //
-//  View+ListSpacing.swift
+//  View+Preferred.swift
 //  ListKit
 //
 //  Created by Daniel Saidi on 2026-06-08.
@@ -10,11 +10,20 @@ import SwiftUI
 
 public extension View {
 
+    /// Hides the scroll content background on supported platforms.
+    func preferredScrollContentHidden() -> some View {
+        #if os(tvOS)
+        self
+        #else
+        self.scrollContentBackground(.hidden)
+        #endif
+    }
+
     /// Applies a custom section spacing on supported platforms.
     func preferredSectionSpacing(
         _ spacing: Double
     ) -> some View {
-        #if os(macOS)
+        #if os(macOS) || os(tvOS)
         self
         #else
         self.listSectionSpacing(spacing)

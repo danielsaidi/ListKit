@@ -14,7 +14,7 @@ public extension View {
     func listBackgroundGradient(
         _ color: Color
     ) -> some View {
-        self.scrollContentBackground(.hidden)
+        self.preferredScrollContentHidden()
             .background(color.gradient)
     }
 
@@ -24,7 +24,7 @@ public extension View {
         startPoint: UnitPoint = .top,
         endPoint: UnitPoint = .bottom
     ) -> some View {
-        self.scrollContentBackground(.hidden)
+        self.preferredScrollContentHidden()
             .background(
                 LinearGradient(
                     gradient: Gradient(colors: colors),
