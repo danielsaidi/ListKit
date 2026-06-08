@@ -92,10 +92,3 @@ private func previewButton() -> some View {
         }
     }
 }
-
-private extension Image {
-
-    static func symbol(_ name: String) -> Image {
-        .init(systemName: name)
-    }
-}

@@ -81,6 +81,41 @@ struct ContentView: View {
 The handle will only render when the list is not in edit mode, to avoid conflicts with the native handle. 
 
 
+### ListSelectItem
+
+The `ListSelectItem` lets you add a customizable selection indicator to any selectable list view:
+
+![Preview](/Resources/list-select-item-cropped.jpg) 
+
+```swift
+struct ContentView: View {
+
+    var body: some View {
+        List {
+            ForEach(0...10, id: \.self) { index in
+                ListSelectItem(
+                    isSelected: index == selection
+                ) {
+                    Text("Item \(index)")
+                }
+                // ...or:
+                ListSelectItem(
+                    isSelected: index == selection
+                ) {
+                    Text("Item \(index)")
+                } selectionIndicator: {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.green)
+                }
+            }
+        }
+    }
+}
+```
+
+The handle will only render when the list is not in edit mode, to avoid conflicts with the native handle. 
+
+
 ### View Extensions
 
 ListKit also provides many view extensions to simplify common tasks:
