@@ -43,7 +43,7 @@ private extension ListDragHandle {
 
     NavigationView {
         List {
-            ForEach(1...10, id: \.self) { item in
+            ForEach(1...10, id: \.self) { _ in
                 HStack {
                     Text("Item")
                     ListDragHandle()

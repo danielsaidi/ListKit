@@ -109,7 +109,7 @@ private extension Shelf {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.yellow)
                     .clipShape(.rect(cornerRadius: 10))
-            } content: { item in
+            } content: { _ in
                 Button {
                     print("Tapped")
                 } label: {
