@@ -28,7 +28,7 @@ https://github.com/danielsaidi/ListKit.git
 
 ## Getting started
 
-ListKit has a bunch of predefined view components, and native view extensions. Below are the most useful views. Please have a look at the online [documentation][Documentation], the source code previews, and the demo app for more examples. 
+ListKit has a bunch of predefined view components, and native view extensions. Below are the most useful views. Please have a look at the online [documentation][Documentation] and the source code previews for more examples. 
 
 
 ### List Button Group
@@ -122,7 +122,7 @@ The online [documentation][Documentation] has more information, articles, code e
 
 ## Demo Application
 
-The `Demo` folder has a demo app that lets you explore the library.
+This repository will get a demo app once it has 100+ stars. Until then, check out the source code demos.
 
 
 

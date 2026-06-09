@@ -24,7 +24,7 @@ https://github.com/danielsaidi/ListKit.git
 
 ## Getting Started
 
-ListKit has a bunch of predefined view components, and native view extensions. Below are the most useful views, but have a look at the source code previews, and the demo app for more examples. 
+ListKit has a bunch of predefined view components, and native view extensions. Below are the most useful views, but have a look at the source code previews for more examples. 
 
 
 ### List Button Group
@@ -141,88 +141,26 @@ ListKit is available under the MIT license.
 
 ## Topics
 
-### Cards
-
-- ``Card``
-- ``CardButtonStyle``
-- ``CardStyle``
-
-### Colors
-
-- ``SwiftUICore/Color``
-- ``ColorRepresentable``
-
-### Data
-
-- ``CsvParser``
-- ``FetchedDataView``
-- ``MimeType``
-- ``StorageValue``
-- ``AppStorageValue``
-- ``SceneStorageValue``
-
-### Device
-
-- ``DeviceIdentifier``
-
-### Files
-
-- ``BundleFileFinder``
-- ``DirectoryFileManager``
-- ``DirectoryMonitor``
-- ``DirectoryObservable``
-- ``iCloudDocumentSync``
-
-### Fonts
-
-- ``SwiftUICore/Font``
-- ``FontRepresentable``
-
-### Images
-
-- ``SwiftUICore/Image``
-- ``ImageCache``
-- ``ImageRepresentable``
-
-### Keychain
-
-- ``KeychainItemAccessibility``
-- ``KeychainService``
-- ``KeychainWrapper``
-
 ### Lists
 
-- ``Reorderable``
-- ``ReorderableForEach``
-- ``SidebarListRowBackgroundModifier``
+- ``ListButtonGroup``
+- ``ListDragHandle``
+- ``ListSectionTitle``
+- ``ListSelectItem``
+- ``PlainListContent``
+- ``PlainListHeader``
+- ``PlainListFooter``
 
-### Previews
+### Shelves
 
-- ``SwiftUIPreviewInspector``
+- ``Shelf``
 
-### Regex
+### View Extensions
 
-- ``ValidationRegex``
-
-### Sharing
-
-- ``ShareSheet``
-
-### Styles
-
-- ``ViewShadowStyle``
-
-### Text
-
-- ``SwiftUICore/Text``
-- ``MultilineSubmitViewModifier``
-- ``TextEditorStyle``
-- ``TextFieldClearButton``
-
-### Views
-
-- ``SwiftUICore/View``
-- ``EditableView``
+- ``SwiftUICore/View/listBackgroundGradient(_:)``
+- ``SwiftUICore/View/listBackgroundGradient(colors:startPoint:endPoint:)``
+- ``SwiftUICore/View/preferredScrollContentHidden()``
+- ``SwiftUICore/View/preferredListSectionSpacing(_:)``
 
 
 
